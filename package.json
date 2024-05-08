@@ -2,7 +2,7 @@
   "name": "kin-carta-challenge",
   "version": "1.0.0",
   "description": "job interview challenge",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": "https://github.com/herparis/kin-carta-challenge.git",
   "author": "herparis",
   "license": "MIT",
@@ -16,7 +16,9 @@
     "@babel/runtime": "^7.24.5",
     "@react-native/babel-preset": "^0.74.83",
     "@react-native/metro-config": "^0.74.83",
-    "react-native-eject": "^0.2.0"
+    "@react-native/typescript-config": "^0.74.83",
+    "@types/react": "^18.3.1",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "react": "^18.3.1",
