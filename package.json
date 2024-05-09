@@ -6,10 +6,12 @@
   "repository": "https://github.com/herparis/kin-carta-challenge.git",
   "author": "herparis",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start --reset-cache"
+    "start": "react-native start --reset-cache",
+    "lint": "eslint"
   },
   "devDependencies": {
     "@babel/core": "^7.24.5",
@@ -20,6 +22,9 @@
     "@react-native/typescript-config": "^0.74.83",
     "@types/react": "^18.3.1",
     "@types/react-redux": "^7.1.33",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "eslint": "^9.2.0",
     "typescript": "^5.4.5"
   },
   "dependencies": {
