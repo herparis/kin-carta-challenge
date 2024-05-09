@@ -1,12 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import createAppAsyncThunk from '../createAppAsyncThunk'
 import { ContactAPI } from '../../client'
 import type { RootContactObject } from '../../client/contactApi'
 
-// Define a type for the slice state
 interface ContactsState {
-  data: RootContactObject[] | null
+  contacts: RootContactObject[]
   loading: boolean
 }
 
@@ -15,20 +14,25 @@ const shouldFetchContacts = createAppAsyncThunk<RootContactObject[], undefined>(
   async () => await ContactAPI.fetchContacts()
 )
 
-// Define the initial state using that type
 const initialState: ContactsState = {
-  data: null,
+  contacts: [],
   loading: false
 }
 
 const contactsSlice = createSlice({
   name: 'contacts',
   initialState,
-  reducers: {},
+  reducers: {
+    shouldToggleFavorites: (state, action: PayloadAction<string>) => {
+      state.contacts = state.contacts.map(contact =>
+        contact.id === action.payload ? { ...contact, isFavorite: !contact.isFavorite } : contact
+      )
+    }
+  },
   extraReducers(builder) {
     builder.addCase(shouldFetchContacts.fulfilled, (state, action) => {
       state.loading = false
-      state.data = action.payload
+      state.contacts = action.payload
     })
     builder.addCase(shouldFetchContacts.rejected, (state) => {
       state.loading = false

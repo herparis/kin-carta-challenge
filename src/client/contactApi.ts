@@ -1,6 +1,6 @@
 export interface RootContactObject {
   address:       Address;
-  birthdate:     Date;
+  birthdate:     string;
   companyName?:  null | string;
   emailAddress:  string;
   id:            string;
