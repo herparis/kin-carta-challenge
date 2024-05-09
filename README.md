@@ -1,7 +1,8 @@
 # Run Proyect
 
-## Install modules
+## Setup
 - `yarn`
+- `cd ios && pod install`
 
 ## Test Android
 - `yarn android` 

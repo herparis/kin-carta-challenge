@@ -6,7 +6,6 @@
   "repository": "https://github.com/herparis/kin-carta-challenge.git",
   "author": "herparis",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
